@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Support Chatbot</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            <div class="logo">
+                <i class="fas fa-robot"></i>
+                <h1>Customer Support Chatbot</h1>
+            </div>
+            <div class="status-container">
+                <span id="model-status" class="status-indicator untrained">
+                    <i class="fas fa-circle"></i>
+                    <span id="status-text">Untrained</span>
+                </span>
+            </div>
+        </div>
+        
+        <div class="chat-messages" id="chat-messages">
+            <!-- Messages will be dynamically added here -->
+            <div class="message bot-message">
+                <div class="message-content">
+                    Hello! I'm your customer support chatbot. Please train me using the button below before asking questions.
+                </div>
+            </div>
+        </div>
+        
+        <div class="chat-input-container">
+            <input type="text" id="user-input" placeholder="Type your question here..." autocomplete="off">
+            <button id="send-button">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+        
+        <div class="controls">
+            <button id="train-button" class="action-button">
+                <span class="button-content">
+                    <i class="fas fa-brain"></i> Train Model
+                </span>
+                <span class="loading-spinner" id="training-spinner">
+                    <i class="fas fa-spinner fa-spin"></i>
+                </span>
+            </button>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>

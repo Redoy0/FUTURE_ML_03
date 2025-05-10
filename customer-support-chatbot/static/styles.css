@@ -1,0 +1,242 @@
+/* Base styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f5f7fb;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Chat container */
+.chat-container {
+    width: 90%;
+    max-width: 800px;
+    height: 90vh;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Chat header */
+.chat-header {
+    background-color: #4a6fa5;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo i {
+    font-size: 24px;
+}
+
+.logo h1 {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.status-container {
+    display: flex;
+    align-items: center;
+}
+
+.status-indicator {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.status-indicator.untrained {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.status-indicator.trained {
+    background-color: rgba(0, 200, 83, 0.2);
+}
+
+.status-indicator i.fa-circle {
+    font-size: 10px;
+}
+
+.untrained i.fa-circle {
+    color: #ff5252;
+}
+
+.trained i.fa-circle {
+    color: #00c853;
+}
+
+/* Chat messages area */
+.chat-messages {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Message styling */
+.message {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.bot-message {
+    justify-content: flex-start;
+}
+
+.user-message {
+    justify-content: flex-end;
+}
+
+.message-content {
+    max-width: 70%;
+    padding: 12px 16px;
+    border-radius: 18px;
+    font-size: 15px;
+    line-height: 1.4;
+}
+
+.bot-message .message-content {
+    background-color: #f0f2f5;
+    color: #333;
+    border-bottom-left-radius: 5px;
+}
+
+.user-message .message-content {
+    background-color: #4a6fa5;
+    color: white;
+    border-bottom-right-radius: 5px;
+}
+
+/* Chat input area */
+.chat-input-container {
+    display: flex;
+    padding: 15px;
+    border-top: 1px solid #e9eef2;
+}
+
+#user-input {
+    flex: 1;
+    padding: 12px 15px;
+    border: 1px solid #e9eef2;
+    border-radius: 20px;
+    outline: none;
+    font-size: 15px;
+    transition: border 0.3s;
+}
+
+#user-input:focus {
+    border-color: #4a6fa5;
+}
+
+#send-button {
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+    background-color: #4a6fa5;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#send-button:hover {
+    background-color: #3a5a8a;
+}
+
+/* Controls area */
+.controls {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #e9eef2;
+}
+
+.dataset-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.file-name {
+    font-size: 14px;
+    color: #666;
+}
+
+.action-button {
+    padding: 10px 15px;
+    background-color: #4a6fa5;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s;
+}
+
+.action-button:hover {
+    background-color: #3a5a8a;
+}
+
+.action-button i {
+    font-size: 16px;
+}
+
+/* Loading spinner */
+.loading-spinner {
+    display: none;
+}
+
+.button-content {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Responsiveness */
+@media (max-width: 600px) {
+    .chat-container {
+        width: 100%;
+        height: 100vh;
+        border-radius: 0;
+    }
+    
+    .controls {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .message-content {
+        max-width: 85%;
+    }
+}
